@@ -220,7 +220,7 @@ System.out.println(pid);
         
           $.get('registraion.jsp?id=Player&type=update&pid='+id+'&name='+name+'&email='+email+'&pass='+password+'&age='+age+'&contact='+contact+'&address='+address,null,function(resp){
            
-        alert("Successful updated!!!After next login your profile will be updated");
+        alert("Successful updated!!!After next login your profile will be upd   ated");
 });
     }
                       

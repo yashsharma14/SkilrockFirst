@@ -5,7 +5,7 @@
 %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">    
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
