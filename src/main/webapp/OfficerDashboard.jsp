@@ -8,7 +8,6 @@ String name;
 String email;
 String password;
 String contact;
-String age;
 String address;
 int id;
 %>
@@ -20,15 +19,13 @@ int id;
     
 con=new Controller();
 id=con.getpid();        
-pid="Id: Gplay"+String.valueOf(id);
+pid="Id: Officer"+String.valueOf(id);
 name=con.getpName();
 email=con.getpEmail();
 password=con.getpPassword();
 contact=con.getpContact();
-age=con.getpAge();
 address=con.getPAddress();
         
-System.out.println(pid);
 
     }catch(Exception e)
     {
@@ -90,10 +87,6 @@ System.out.println(pid);
                           <td><%=name%></td>
                       </tr>
                       <tr>
-                          <td><strong>Player Age</strong></td>
-                          <td><%=age%></td>
-                      </tr>
-                      <tr>
                           <td><strong>Player Contact</strong></td>
                         <td><%=contact%></td>
                       </tr>
@@ -148,10 +141,6 @@ System.out.println(pid);
                       <tr>
                           <td><strong>Player Name</strong></td>
                           <td><input id="pname" type="text" value="<%=name%>"></td>
-                      </tr>
-                      <tr>
-                          <td><strong>Player Age</strong></td>
-                          <td><input id="page" type="text" value="<%=age%>"></td>
                       </tr>
                       <tr>
                           <td><strong>Player Contact</strong></td>
@@ -213,12 +202,10 @@ System.out.println(pid);
         var email=document.getElementById("pemail").value;
         var password=document.getElementById("ppassword").value;
         var contact=document.getElementById("pcontact").value;
-        var age=document.getElementById("page").value;
         var address=document.getElementById("paddress").value;
         
         
-        
-          $.get('registraion.jsp?id=Player&type=update&pid='+id+'&name='+name+'&email='+email+'&pass='+password+'&age='+age+'&contact='+contact+'&address='+address,null,function(resp){
+          $.get('registraion.jsp?id=Officer&type=update&pid='+id+'&name='+name+'&email='+email+'&pass='+password+'&contact='+contact+'&address='+address,null,function(resp){
            
         alert("Successful updated!!!After next login your profile will be updated");
 });

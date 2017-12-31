@@ -1,7 +1,7 @@
 
 <%  
     String pageName = "Portal.jsp"; 
-    String pageName1="Portal.jsp";
+    String pageName1="Officer.jsp";
 %>
 
 <!DOCTYPE html>
@@ -33,9 +33,8 @@ function redirectPage1(pageName1){
       </script>
 </head>
 <body style="background-color:black">
-        
-   
-<div class="container">
+
+    <div class="container">
 
     <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">

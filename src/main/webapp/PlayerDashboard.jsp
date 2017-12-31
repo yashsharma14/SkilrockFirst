@@ -51,7 +51,7 @@ System.out.println(pid);
 <body>
 
 <div class="container">
-  <h2>Welcome username</h2>
+    <h2>Welcome <%=name%></h2>
   
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
@@ -220,7 +220,7 @@ System.out.println(pid);
         
           $.get('registraion.jsp?id=Player&type=update&pid='+id+'&name='+name+'&email='+email+'&pass='+password+'&age='+age+'&contact='+contact+'&address='+address,null,function(resp){
            
-        alert("Successful updated!!!After next login your profile will be upd   ated");
+        alert("Successful updated!!!After next login your profile will be updated");
 });
     }
                       

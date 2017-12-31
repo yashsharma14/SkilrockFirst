@@ -115,6 +115,100 @@ System.out.println("updated sucessfully");
     
 
 }
+if(id.equalsIgnoreCase("Officer") && type.equalsIgnoreCase("register"))
+{
+
+System.out.println("hello officer");
+    String query="INSERT INTO officer(oname,oemail,opassword,oaddress,ocontact) values(?,?,?,?,?)";
+    
+    ps=con.prepareStatement(query);
+    
+    String name=request.getParameter("name");
+    String email=request.getParameter("email");
+    String password=request.getParameter("pass");
+    String contact=request.getParameter("contact");
+    String address=request.getParameter("address");
+    
+    ps.setString(1,name);
+    ps.setString(2,email);
+    ps.setString(3,password);
+    ps.setString(4,address);
+    ps.setString(5,contact);
+    
+    ps.execute();
+    con.close();
+
+
+}
+
+if(id.equalsIgnoreCase("Officer") && type.equalsIgnoreCase("login"))
+{
+    System.out.println("login check");
+    String username=request.getParameter("username");
+    String password=request.getParameter("pass");
+    int count=0;
+  st=con.createStatement();
+    rs=st.executeQuery("select * from officer");
+    
+    while(rs.next())
+    {
+        if(rs.getString(3).equalsIgnoreCase(username) && rs.getString(4).equalsIgnoreCase(password))
+        {
+            count=1;
+            
+            cont.setpid(rs.getInt(1));
+            cont.setpAddress(rs.getString(5));
+            cont.setpContact(rs.getString(6));
+            cont.setpName(rs.getString(2));
+            cont.setpPassword(rs.getString(4));
+            cont.setpEmail(rs.getString(3));
+            break;
+        }
+    }
+    if(count==1)
+    {
+        %>
+              true  
+        <%
+        System.out.println("Login Successful");
+    }
+    else
+    {
+        System.out.println("Login failed");
+    }
+}
+
+if(id.equalsIgnoreCase("officer") && type.equalsIgnoreCase("update"))
+{
+
+System.out.println("update");
+String pid=request.getParameter("pid");
+
+    String name=request.getParameter("name");
+    String email=request.getParameter("email");
+    String password=request.getParameter("pass");
+    String contact=request.getParameter("contact");
+    String address=request.getParameter("address");
+
+String query="UPDATE officer SET oname=?,oemail=?,opassword=?,oaddress=?,ocontact=? where oid='"+Integer.valueOf(pid)+"'";
+    System.out.println(password);
+
+    ps=con.prepareStatement(query);
+    
+    ps.setString(1,name);
+    ps.setString(2,email);
+    ps.setString(3,password);
+    ps.setString(4,address);
+    ps.setString(5,contact);
+    
+ps.executeUpdate();
+
+System.out.println("updated sucessfully");
+    
+
+}
+
+
 
        }catch(Exception e)
        {
