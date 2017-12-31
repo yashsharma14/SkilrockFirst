@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Dec 30, 2017 at 04:03 PM
+-- Generation Time: Dec 31, 2017 at 08:44 AM
 -- Server version: 5.0.41
 -- PHP Version: 5.2.3
 
@@ -24,44 +24,20 @@ CREATE TABLE `officer` (
   `oname` varchar(20) NOT NULL,
   `oemail` varchar(20) NOT NULL,
   `opassword` varchar(20) NOT NULL,
-  `oage` varchar(20) NOT NULL,
+  `oaddress` varchar(20) NOT NULL,
   `ocontact` varchar(20) NOT NULL,
   PRIMARY KEY  (`oid`),
   UNIQUE KEY `oemail` (`oemail`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 -- 
 -- Dumping data for table `officer`
 -- 
 
-INSERT INTO `officer` (`oid`, `oname`, `oemail`, `opassword`, `oage`, `ocontact`) VALUES 
-(1, 'yash sharma', 'sharmay334@gmail.com', '123', '21', '7690944651'),
-(2, 'raj thakre', 'raj@gmail.com', '123456', '21', '7014565755');
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `player`
--- 
-
-CREATE TABLE `player` (
-  `pid` int(11) NOT NULL auto_increment,
-  `pname` varchar(20) NOT NULL,
-  `pemail` varchar(20) NOT NULL,
-  `ppassword` varchar(20) NOT NULL,
-  `page` varchar(20) NOT NULL,
-  `pcontact` varchar(20) NOT NULL,
-  `address` varchar(30) NOT NULL,
-  PRIMARY KEY  (`pid`),
-  UNIQUE KEY `pemail` (`pemail`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
--- 
--- Dumping data for table `player`
--- 
-
-INSERT INTO `player` (`pid`, `pname`, `pemail`, `ppassword`, `page`, `pcontact`, `address`) VALUES 
-(1, 'yash sharma', 'sharmay334@gmail.com', '12345', '20', '7690944651', '82, Arya nagar'),
-(2, 'gagan sharma', 'gagan@gmail.com', '12345', '21', '701565655', 'arya nagar'),
-(3, 'usha sharma', 'usha@gmail.com', '12345', '22', '9530353144', '82, Arya nagar'),
-(4, 'rakesh sharma', 'rakesh@gmail.com', '12345', '22', '900012699', 'arya nagar');
+INSERT INTO `officer` (`oid`, `oname`, `oemail`, `opassword`, `oaddress`, `ocontact`) VALUES 
+(1, 'yash sharma', 'sharmay334@gmail.com', '1234', 'arya nagar', '7690944651'),
+(2, 'gagan', 'gagan@gmail.com', '123', 'arya nagar', '7690944651'),
+(3, 'rakesh sharma', 'rakesh@gmail.com', '123', 'arya nagar', '9001266908'),
+(4, 'rajesh', 'sain@gmail.com', '123', 'arya nagar', '7666687965'),
+(5, 'rajesh', 'saini@gmail.com', '1414', 'budh vihar', '9685654580'),
+(6, 'officer', 'officer@gmail.com', '1414', 'bhagat singh circle', '7690994655');
